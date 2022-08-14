@@ -7,3 +7,7 @@ Implement a Node application that returns a hardcoded list of phonebook entries 
 ## step 2
 
 Implement a page at the address http://localhost:3001/info information of how many entries was in the phonebook and the time when the request was recieved.
+
+## step 3
+
+Implement the functionality for displaying the information for a single phonebook entry. The url for getting the data for a person with the id 5 should be http://localhost:3001/api/persons/5
