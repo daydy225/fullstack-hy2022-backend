@@ -68,26 +68,32 @@ const generateId = () => {
   return getRandomNumber(1, 100000000)
 }
 
-console.log(generateId())
-
 app.post('/api/persons/', (req, res) => {
   const body = req.body
   console.log(body.name, body.number)
 
-  // if (!body.name || !body.number) {
-  //   return res.status(400).json({
-  //     error: 'content missing',
-  //   })
-  // }
+  if (!body.name || !body.number) {
+    return res.status(400).json({
+      error: 'The name or number is missing',
+    })
+  }
+
+  persons.forEach(person => {
+    if (person.name === body.name) {
+      res.status(400).json({
+        error: 'name must be unique',
+      })
+    }
+  })
 
   const newPerson = {
     id: generateId(),
     name: body.name,
     number: body.number,
   }
-
   persons = persons.concat(newPerson)
-  res.json(newPerson)
+
+  res.json(persons)
 })
 
 const PORT = 3001
