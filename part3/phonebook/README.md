@@ -26,3 +26,7 @@ Implement error handling for creating new entries. The request is not allowed to
 
 The name or number is missing
 The name already exists in the phonebook
+
+## step 7
+
+Add the morgan middleware to your application for logging. Configure it to log messages to your console based on the tiny configuration

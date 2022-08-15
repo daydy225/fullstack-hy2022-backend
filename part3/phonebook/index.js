@@ -1,7 +1,8 @@
-const { response } = require('express')
 const express = require('express')
 
 const app = express()
+
+const morgan = require('morgan')
 
 let persons = [
   {
@@ -27,6 +28,11 @@ let persons = [
 ]
 
 app.use(express.json())
+app.use(morgan('tiny'))
+
+app.get('/', (req, res) => {
+  res.send('hello world')
+})
 
 app.get('/api/persons', (req, res) => {
   res.json(persons)
@@ -70,7 +76,6 @@ const generateId = () => {
 
 app.post('/api/persons/', (req, res) => {
   const body = req.body
-  console.log(body.name, body.number)
 
   if (!body.name || !body.number) {
     return res.status(400).json({
