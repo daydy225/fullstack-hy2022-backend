@@ -15,3 +15,7 @@ Implement the functionality for displaying the information for a single phoneboo
 ## step 4
 
 Implement functionality that makes it possible to delete a single phonebook entry by making an HTTP DELETE request to the unique URL of that phonebook entry.
+
+## step 5
+
+Expand the backend so that new phonebook entries can be added by making HTTP POST requests to the address http://localhost:3001/api/persons. Generate a new id for phonebook entry with a random range of numebers between 1 and 100000000.
