@@ -30,3 +30,7 @@ The name already exists in the phonebook
 ## step 7
 
 Add the morgan middleware to your application for logging. Configure it to log messages to your console based on the tiny configuration
+
+## step 8
+
+Configuration of morgan so that it also shows the data sent in HTTP POST requests
